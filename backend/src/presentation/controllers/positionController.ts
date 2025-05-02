@@ -19,7 +19,7 @@ export const getInterviewFlowByPosition = async (req: Request, res: Response) =>
     try {
         const positionId = parseInt(req.params.id);
         const interviewFlow = await getInterviewFlowByPositionService(positionId);
-        res.status(200).json(interviewFlow.interviewFlow);
+        res.status(200).json({ interviewFlow });
     } catch (error) {
         if (error instanceof Error) {
             res.status(404).json({ message: 'Position not found', error: error.message });
