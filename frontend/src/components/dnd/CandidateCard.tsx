@@ -1,5 +1,6 @@
 import React from 'react';
 import { Badge, Card } from 'react-bootstrap';
+import { Envelope, GripVertical, Telephone } from 'react-bootstrap-icons';
 import DraggableItem from './DraggableItem';
 
 interface Candidate {
@@ -54,20 +55,20 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, className = ''
           
           {candidate.email && (
             <Card.Text className="text-truncate small text-muted mb-1" title={candidate.email}>
-              <i className="bi bi-envelope me-1"></i>
+              <Envelope className="me-1" size={16} />
               {candidate.email}
             </Card.Text>
           )}
           
           {candidate.phoneNumber && (
             <Card.Text className="small text-muted mb-1" title={candidate.phoneNumber}>
-              <i className="bi bi-telephone me-1"></i>
+              <Telephone className="me-1" size={16} />
               {candidate.phoneNumber}
             </Card.Text>
           )}
           
           <Card.Text className="small text-end mt-2 text-muted">
-            <i className="bi bi-grip-vertical me-1"></i>
+            <GripVertical className="me-1" size={16} />
             Drag to move
           </Card.Text>
         </Card.Body>
